@@ -17,7 +17,7 @@ DATA_info = {'train': {'path': [], 'classes': []},
              }
 for p in PHASE:
     for s in SPECIES:
-        DATA_DIR = ROOTS + p + '\\' + s
+        DATA_DIR = ROOTS + p + '/' + s
         DATA_NAME = os.listdir(DATA_DIR)
 
         for item in DATA_NAME:

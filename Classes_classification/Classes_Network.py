@@ -1,6 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
@@ -38,5 +39,4 @@ class Net(nn.Module):
 
         x_classes = self.fc2(x)
         x_classes = self.softmax1(x_classes)
-
         return x_classes
