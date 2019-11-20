@@ -21,6 +21,7 @@ class Net(nn.Module):
 
         self.drop = nn.Dropout2d()
 
+        # 最终是二分类，是哺乳纲还是鸟纲
         self.fc2 = nn.Linear(150, 2)
         self.softmax1 = nn.Softmax(dim=1)
 
