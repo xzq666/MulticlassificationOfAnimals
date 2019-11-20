@@ -3,6 +3,9 @@ import torch.nn.functional as F
 
 
 class Net(nn.Module):
+    """
+    用于"纲"分类的网络
+    """
     def __init__(self):
         super(Net, self).__init__()
         self.conv1 = nn.Conv2d(3, 3, 3)
