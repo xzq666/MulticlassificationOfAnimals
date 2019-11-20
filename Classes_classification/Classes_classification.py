@@ -155,6 +155,7 @@ def train_model(model, criterion, optimizer, scheduler, num_epochs=50):
                 best_model_wts = copy.deepcopy(model.state_dict())
                 print('Best val classes Acc: {:.2%}'.format(best_acc))
     model.load_state_dict(best_model_wts)
+    # 保存效果最好的模型
     torch.save(model.state_dict(), 'best_model.pt')
     print('Best val classes Acc: {:.2%}'.format(best_acc))
     return model, Loss_list, Accuracy_list_classes
