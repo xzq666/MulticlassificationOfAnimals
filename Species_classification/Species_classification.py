@@ -130,9 +130,9 @@ def train_model(model, criterion, optimizer, scheduler, num_epochs=50):
                 # 对训练集进行autograd追踪，对验证集不进行autograd追踪
                 with torch.set_grad_enabled(phase == 'train'):
                     x_species = model(inputs)
-                    # 将x_classes拼接成两列
+                    # 将x_species拼接成三列
                     x_species = x_species.view(-1, 3)
-                    # 返回x_classes中每行的最大值
+                    # 返回x_species中每行的最大值
                     _, preds_species = torch.max(x_species, 1)
                     loss = criterion(x_species, labels_species)
                     if phase == 'train':

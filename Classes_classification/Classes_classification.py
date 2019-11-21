@@ -172,7 +172,7 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.1)
 model, Loss_list, Accuracy_list_classes = train_model(network, criterion, optimizer, exp_lr_scheduler, num_epochs=100)
 
 x = range(0, 100)
-# 生成训练集与验证集上的acc对比图
+# 生成训练集与验证集上的loss对比图
 y1 = Loss_list["val"]
 y2 = Loss_list["train"]
 plt.plot(x, y1, color="r", linestyle="-", marker="o", linewidth=1, label="val")
@@ -183,7 +183,7 @@ plt.ylabel('loss')
 plt.savefig("train and val loss vs epoches.jpg")
 plt.close('all')
 
-# 生成训练集与验证集上的loss对比图
+# 生成训练集与验证集上的acc对比图
 y5 = Accuracy_list_classes["train"]
 y6 = Accuracy_list_classes["val"]
 plt.plot(x, y5, color="r", linestyle="-", marker=".", linewidth=1, label="train")
